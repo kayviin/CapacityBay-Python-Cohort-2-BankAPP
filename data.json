@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "first_name": "chu",
+      "last_name": "ka",
+      "dob": "12/09/2023",
+      "account_number": 8893295588,
+      "pin": "1111",
+      "balance": 0.0
+    },
+    {
+      "first_name": "chuk",
+      "last_name": "ka",
+      "dob": "12/09/2023",
+      "account_number": 2814056113,
+      "pin": "1111",
+      "balance": 0.0
+    },
+    {
+      "first_name": "kev",
+      "last_name": "vin",
+      "dob": "12/09/2023",
+      "account_number": 5474394702,
+      "pin": "1234",
+      "balance": 0
+    }
+  ]
+}

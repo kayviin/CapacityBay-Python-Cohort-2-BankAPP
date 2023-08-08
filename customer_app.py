@@ -221,8 +221,9 @@ class BankApp:
                         elif option == "4":
                             break
 
-            # elif option == "3":
-            #     break
+            elif option == "3":
+                print("Thank you for using the app")
+                break
 
 if __name__ == "__main__":
     app = BankApp("data.json")

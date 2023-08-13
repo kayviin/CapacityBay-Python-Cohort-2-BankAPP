@@ -54,6 +54,23 @@ class AgentApp:
         self.save_data()
         print("Reset successful!")
 
+    def deposit_money(self):
+        account_number = input("Enter customer's account number: ")
+        account_number = int(account_number)
+        user = self.get_account(account_number)
+        if user:
+            print(f"Depositing money into {user['first_name']} {user['last_name']}'s account")
+            amount = float(input("Enter amount to deposit: "))
+            confirm = input("Confirm deposit? (yes/no): ")
+            if confirm.lower() == "yes":
+                user["balance"] += amount
+                self.save_data()
+                print("Deposit successful!")
+            else:
+                print("Deposit canceled")
+        else:
+            print("User not found")
+            
     def perform_customer_transaction(self):
         sender_acct = input("Enter sender account:")
         sender_acct = int(sender_acct)
@@ -110,10 +127,11 @@ class AgentApp:
             print("\nMenu:")
             print("1. Display Customer Database")
             print("2. Reset Customer PIN")
-            print("3. Perform Customer Transaction")
-            print("4. Quit")
+            print("3. Deposit Money")
+            print("4. Perform Customer Transaction")
+            print("5. Quit")
 
-            choice = input("Enter your choice (1-4): ")
+            choice = input("Enter your choice (1-5): ")
 
             if choice == "1":
                 self.display_customer_database()
@@ -121,8 +139,10 @@ class AgentApp:
                 account_number = input("Enter customer's account number: ")
                 self.reset_customers_pin(account_number)
             elif choice == "3":
-                self.perform_customer_transaction()
+                self.deposit_money()
             elif choice == "4":
+                self.perform_customer_transaction()
+            elif choice == "5":
                 print("Thank you for using the Agent App. Goodbye!")
                 break
             else:
